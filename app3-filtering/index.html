@@ -1,6 +1,19 @@
-<html>
-	<body>
-		Something
+<html ng-app="myApp3">
+	<body ng-controller="myController3">
+
+
+
+
+		<input ng-model="filterText" placeholder="Filter"></input>
+														<!-- you gotta give it an object in order for angular to look for property -->
+		<div ng-repeat="person in people | filter: {name: filterText}">
+
+			{{person.name}} ({{person.email}})
+		</div>
+
+
+
+
 				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
